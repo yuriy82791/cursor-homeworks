@@ -1,6 +1,6 @@
-let vegetablePrice = 15.678;
-let meatPrice = 123.965;
-let cheesePrice = 90.2345;
+const vegetablePrice = 15.678;
+const meatPrice = 123.965;
+const cheesePrice = 90.2345;
 let maxValue = Math.max(vegetablePrice, meatPrice, cheesePrice);
 let minValue = Math.min(vegetablePrice, meatPrice, cheesePrice);
 console.log('max number:' + maxValue);
