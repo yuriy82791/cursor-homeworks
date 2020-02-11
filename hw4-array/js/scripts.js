@@ -4,7 +4,6 @@ const marks = [4, 5, 5, 3, 4, 5];
 const getRandomNumber = function(from, to){
   return Math.floor(Math.random() * (to - from + 1)) + from;
 };
-//------------------------------------------
 const createPairs = function(students){
   let pairs = [];
   for(let i = 1; i < students.length; i = i + 2){
@@ -45,6 +44,6 @@ const setMarrksForProject = function(studentsWithThemes){
   }
   return projectMark;
 }
-const projectWithMarks = setMarrksForProject(studentsWithThemes);
+const projectWithMarks = setMarrksForProject(addThemes(pairsList, themes));
 console.log(projectWithMarks);
 
