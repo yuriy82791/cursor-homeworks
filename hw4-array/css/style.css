@@ -110,11 +110,13 @@ p{
 }
 /* ---------------------------------reset styles-------------------------------------------------------- */
 .container{
-  position: relative;
-  height: 100vh;
+	height: 100vh;
+	background-image: url(../images/logo.png);
+	background-position:center;
+	background-repeat: no-repeat;
 }
-#result p{
+.page-title{
   font-size: 32px;
   text-align: center;
-  margin-top: 50px;
+  padding-top: 50px;
 }
