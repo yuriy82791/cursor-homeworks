@@ -1,18 +1,6 @@
 const findMaxDigit = function (number){
-  /*
-  //find max digit from number
-  let numberToString = number.toString();
-  let maxNumber = null;
-  for(let i = 1; i < numberToString.length; i++){
-    if(numberToString[i] > numberToString[i-1] && numberToString[i] > maxNumber){
-      maxNumber = numberToString[i];
-    } 
-  }
-  return maxNumber;
-  */
   return maxNumber = Math.max(...number.toString().split(""));
 };
-
 
 const findDegree = function (number, degree){
   let pow = number;
@@ -23,13 +11,11 @@ const findDegree = function (number, degree){
   }else{
     pow = 1;
   }
-  
   return pow;
 }; 
 
 const capitalLetter = function(name){
-  name = name.toLowerCase();
-  return name = name.charAt(0).toUpperCase() + name.slice(1);
+  return name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
 };
 
 const findAmountWithoutTax = function(salary, tax){
@@ -53,11 +39,11 @@ const findLetterCount = function(text, letter){
 
 const convertMoney = function(money){
   let converted = null;
-  const courseDollar = 25;
+  const rateDollar = 25;
   if(money.indexOf('$') !== -1){
-    converted = parseInt(money)*courseDollar + 'uah';
+    converted = parseInt(money)*rateDollar + 'uah';
   }else if(money.toLowerCase().indexOf('uah') !== -1){
-    converted = parseInt(money)/courseDollar + '$';
+    converted = parseInt(money)/rateDollar + '$';
   }else{
     converted = 'This function convert only dollar to uah or uah to dollar';
   }
@@ -65,10 +51,9 @@ const convertMoney = function(money){
 };
 
 
-const generateRandomPass = function(passwordLength){
-  const passLength = passwordLength === undefined ? 8 : passwordLength;
+const generateRandomPass = function(passwordLength = 8){
   let password = '';
-  for(let i = 1; i <= passLength; i++){
+  for(let i = 1; i <= passwordLength; i++){
     password += Math.floor(Math.random()*10);
   }
   
@@ -77,7 +62,6 @@ const generateRandomPass = function(passwordLength){
 
 
 const removeLetter = function(text, letter){
-  //можна було зробити через цикл але вирішив зробити через рекурсію
   const count = text.indexOf(letter);
   if(count !== -1 ){
     let tempString = text.substr(0, count) + text.substr(count+1);
@@ -89,12 +73,14 @@ const removeLetter = function(text, letter){
 
 
 const isWordPolyndrom = function(word){
-  //можна було зробити через чикл з перевіркою на співпадіння букв, але вирішив зробити так
   let tempWord = word.replace(/\s/g, "").toLowerCase();
   const reverseWord =  tempWord.split('').reverse().join(''); 
-  
-  return reverseWord === word ? `word ${word} is polindrom` : `word ${word} is not polindrom`;
-};
+  if(reverseWord == tempWord){
+    return true;
+  }else{
+    return false;
+  }
+}
 
 
 const deleteDuplicatedLetters = function(text){
@@ -119,7 +105,7 @@ const message = `
   <p>Function #7 - ${convertMoney('1111 UAH')}</p>
   <p>Function #8 - ${generateRandomPass(4)}</p>
   <p>Function #9 - ${removeLetter('blablabla', 'a')}</p>
-  <p>Function #10 - ${isWordPolyndrom('Аргентина манит негра')}</p>
+  <p>Function #10 - word "Аргентина манит негра" is polindrom ->  ${isWordPolyndrom('Аргентина манит негра')}</p>
   <p>Function #11 - ${deleteDuplicatedLetters('Бисквит был очень нежный')}</p>
 `;
 document.getElementById('result').innerHTML += message;
