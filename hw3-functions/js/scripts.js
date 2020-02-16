@@ -75,11 +75,7 @@ const removeLetter = function(text, letter){
 const isWordPolyndrom = function(word){
   let tempWord = word.replace(/\s/g, "").toLowerCase();
   const reverseWord =  tempWord.split('').reverse().join(''); 
-  if(reverseWord == tempWord){
-    return true;
-  }else{
-    return false;
-  }
+  return reverseWord == tempWord;
 }
 
 
