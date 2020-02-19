@@ -47,7 +47,7 @@ console.log('Average mark ->'+getAverageMark(students[0]));
 console.log('------------------------------------------------------------------------------');
 //--------function #3-----------------------
 const getStudentInfo = function(student){
-  let{name, course} = student;
+  const{name, course} = student;
   const mark = getAverageMark(student);
   return {name : name, course : course, AverageMark : mark};
 };
