@@ -22,7 +22,7 @@ const getModa = function(...numbers){
   const sortArr = integerArr.sort((a,b) => {return a - b;});
   let count = 1;
   let countArr = [];
-  let res = [];
+  const res = [];
   for(let i = 0; i < sortArr.length; i++){
     if(sortArr[i] === sortArr[i+1]){
       count++;
