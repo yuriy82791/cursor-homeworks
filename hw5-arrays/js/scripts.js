@@ -8,7 +8,7 @@ const getIntegerNumbers = function(numberArr){
 };
 //---------function #1------------------------
 const createRandomArray = function(length, from, to){
-  let arr = [];
+  const arr = [];
   for(let i = 0; i < length; i++){
     arr.push(getRandomNumber(from, to));
   }
@@ -27,13 +27,12 @@ const getModa = function(...numbers){
     if(sortArr[i] === sortArr[i+1]){
       count++;
     }else{
-      if(count > 1){
-        countArr.push([sortArr[i], count]);
-      }
+      countArr.push([sortArr[i], count]);
       count = 1;
     }
   }
   countArr = countArr.sort((a,b) => {return a[1] - b[1];});
+  
   for(let j = countArr.length-1; j >=0; j--){
     if(countArr[j][1] > countArr[j-1][1]){
       res.push(countArr[j][0]);
@@ -45,20 +44,17 @@ const getModa = function(...numbers){
   return res.reverse();
   
 };
-console.log('function #2 - '+ getModa(55, 6, 77, 2, 55, 6, 11, 78, 2, 77, 55, 77, 57, 87, 23, 55, 56, 2, 3, 2));
+console.log('function #2 - '+ getModa(1,2,3,3,3,1,1));
 //------------------------------------------
 //---------function #3------------------------
 const getAverage = function(...numbers){
   let sum = 0;
   let minusTolength = 0;
-  numbers.forEach(function(val){
-    if(val === parseInt(val, 10)){
-      sum += val;
-    }else{
-      minusTolength++;
-    }
+  const integerArr = getIntegerNumbers(numbers);
+  sum = integerArr.reduce(function(next, prev){
+    return next + prev;
   });
-  return (sum / (numbers.length - minusTolength)).toFixed(2);
+  return Number((sum / integerArr.length).toFixed(2));
 };
 console.log('function #3 - '+ getAverage(20, 10, 1.2, 1000)); 
 //------------------------------------------
@@ -77,7 +73,7 @@ console.log('function #4 - '+ getMedian(6, 2, 55, 55.5, 14.3, 11, 78, 2, 55, 77,
 //------------------------------------------
 //---------function #5------------------------
 const filterEvenNumbers = function(...numbers){
-  return evenArray = numbers.filter((val) => {
+  return numbers.filter((val) => {
     if(val === parseInt(val, 10)){
       return val % 2 !== 0;
     }
@@ -87,7 +83,7 @@ console.log('function #5 - '+ filterEvenNumbers(1, 2, 3, 1.2, 23, 34, 45, 56, 3,
 //------------------------------------------
 //---------function #6------------------------
 const countPositiveNumbers = function(...numbers){
-  return evenCount = numbers.reduce((count, val) => {
+  return numbers.reduce((count, val) => {
    if(val > 0 ){
     count++;
    }
@@ -98,23 +94,22 @@ console.log('function #6 - '+ countPositiveNumbers(123, 1, -1, -10, 23, 14, -23,
 //------------------------------------------
 //---------function #7------------------------
 const getDividedByFive = function(...numbers){
-  let evenArray = numbers.filter((val) => {
+  return numbers.filter((val) => {
     if(val % 5 === 0 ){
      return val;
     }
   });
-  return evenArray;
+  
 };
 console.log('function #7 - '+ getDividedByFive(1, 5, 25, 34, 45, 56, 55, 77, 105)); 
 //------------------------------------------
 //---------function #8------------------------
 const replaceBadWords = function(string){
-  let badWords = ['fuck', 'shit'];
-  let arr = string.split(" ");
+  const badWords = ['fuck', 'shit'];
+  const arr = string.split(" ");
   arr.forEach(function(word, key){
       badWords.forEach(function(val){
-        let from = word.indexOf(val);
-        let to = val.length;
+        const from = word.indexOf(val);
         if(from !== -1){
           arr[key] = word.replace(val, '****');
         }
