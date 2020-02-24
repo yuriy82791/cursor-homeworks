@@ -26,8 +26,8 @@ const students = [{
 //--------function #1----------------------
 const getSubjects = function(student){
     const tempSubjects = Object.keys(student.subjects);
-    studentsSubjects = tempSubjects.map(function(val){
-      let subjectName = val.split('_').join(' ');
+    const studentsSubjects = tempSubjects.map(function(val){
+      const subjectName = val.split('_').join(' ');
       return subjectName.slice(0,1).toUpperCase()+subjectName.slice(1).toLowerCase();
     });
     return studentsSubjects;
@@ -49,7 +49,7 @@ console.log('-------------------------------------------------------------------
 const getStudentInfo = function(student){
   const{name, course} = student;
   const mark = getAverageMark(student);
-  return {name : name, course : course, AverageMark : mark};
+  return {name, course, AverageMark : mark};
 };
 console.log('Function #3');
 console.log(getStudentInfo(students[0]));
@@ -57,9 +57,8 @@ console.log('-------------------------------------------------------------------
 //--------function #4-----------------------
 const getStudentsNames = function(students){
   return students.map(function(student){
-    let {name} = student;
-    return name;
-  }).sort();
+    return student.name;
+  }).sort(); 
 };
 console.log('Function #4');
 console.log(getStudentsNames(students));
@@ -77,7 +76,7 @@ console.log('Best student -> '+getBestStudent(students));
 console.log('------------------------------------------------------------------------------');
 //--------function #6-----------------------
 const calculateWordLetters = function(string){
-  let countLetters = {};
+  const countLetters = {};
   for(let i = 0; i < string.length; i++){
     string[i] in countLetters ? countLetters[string[i]] +=1 : countLetters[string[i]] = 1;
   }
