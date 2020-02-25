@@ -6,29 +6,31 @@ const getRandomNumber = function(from, to){
 };
 //----Function#1---------------------------------------------------------------
 function getMyTaxes(salary){
-  const calcTax =  Number(this.tax*salary);
+  return  Number(this.tax*salary);
   return `Tax paid by a IT-specialist in the selected country from salary ${salary} is ${calcTax}`
 }
-console.log(getMyTaxes.call(ukraine, 2500));
+console.log('Tax paid by a IT-specialist in the selected country from salary is '+getMyTaxes.call(ukraine, 2500));
 //-----------------------------------------------------------------------------
 //----Function#2---------------------------------------------------------------
-function getMiddleTaxes(ukraine){
+function getMiddleTaxes(country){
   return Number(this.tax*this.middleSalary); 
 }
 console.log('The middle tax paid by a IT-specialist in the selected country from salary ' + getMiddleTaxes.call(latvia));
 //-----------------------------------------------------------------------------
 //----Function#3---------------------------------------------------------------
-function getTotalTaxes(ukraine){
+function getTotalTaxes(country){
   return Number(this.tax*this.middleSalary*this.vacancies); 
 }
 console.log('The total taxes paid by a IT-specialists in the selected country from salary ' + getTotalTaxes.call(litva));
 //-----------------------------------------------------------------------------
 //----Function#4---------------------------------------------------------------
-function getMySalary(ukraine){
-  const mySalary = getRandomNumber(1500, 2000);
-  const myTax = Number((mySalary*this.tax).toFixed(2));
-  const myProfit = mySalary - myTax;  
-  return {salary: mySalary, taxes: myTax, profit: myProfit};
+function getMySalary(country){
+  setInterval(function(){
+    const mySalary = getRandomNumber(1500, 2000);
+    const myTax = Number((mySalary*country.tax).toFixed(2));
+    const myProfit = Number((mySalary - myTax).toFixed(2));  
+    console.log({salary: mySalary, taxes: myTax, profit: myProfit});
+  }, 10000);
 }
-setInterval(function(){console.log(getMySalary.call(ukraine));}, 10000);
+getMySalary(ukraine);
 //-----------------------------------------------------------------------------
