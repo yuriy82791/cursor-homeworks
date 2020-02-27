@@ -19,9 +19,11 @@ const generateSquare = function(container, number){
 const generateSquareInterval = function(container, number){
   generateSquare('square-interval', 25);
   const block = document.getElementById(container)
-  setInterval(() =>{
+  let timerID = setInterval(() =>{
     for(let i = 0; i < block.children.length; i++){
       block.children[i].style.backgroundColor = getRandomColor();
     }
   }, 1000);
 } 
+document.getElementById('btn-create').addEventListener('click', generateSquare.bind(null, 'square-container', 25));
+document.getElementById('btn-animate').addEventListener('click', generateSquareInterval.bind(null, 'square-interval', 25));
