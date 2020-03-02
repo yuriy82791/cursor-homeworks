@@ -1,7 +1,7 @@
 const getRandomColor = function () {
   const colorArr = '0123456789ABCDEF';
   let  color = '#';
-  for (var i = 0; i < 6; i++) {
+  for (let i = 0; i < 6; i++) {
     color += colorArr[Math.floor(Math.random() * 16)];
   }
   return color;
@@ -16,10 +16,15 @@ const generateSquare = function(container, number){
     block.append(div);
   }
 }  
-const generateSquareInterval = function(container, number){
+let timerID = null;
+const generateSquareInterval = function(container, number){ 
   generateSquare('square-interval', 25);
-  const block = document.getElementById(container)
-  let timerID = setInterval(() =>{
+  console.log(timerID);
+  const block = document.getElementById(container);
+  if(timerID != null){
+    clearInterval(timerID);
+  }
+  timerID = setInterval(() =>{
     for(let i = 0; i < block.children.length; i++){
       block.children[i].style.backgroundColor = getRandomColor();
     }
