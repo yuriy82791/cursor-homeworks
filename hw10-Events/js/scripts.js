@@ -26,4 +26,4 @@ document.addEventListener('keypress', function(event){
     }
     document.getElementById('soundDefault').play();
   }
-}); 
+});  
