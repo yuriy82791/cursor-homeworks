@@ -1,0 +1,169 @@
+/* ---------------------------------reset styles-------------------------------------------------------- */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+	border: 0;
+	font-size: 100%;
+	font-style: inherit;
+	font-weight: 400;
+	margin: 0;
+	outline: 0;
+	padding: 0;
+	vertical-align: baseline;
+  font-family: 'Roboto', sans-serif;
+}
+
+html {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	font-size: 62.5%;
+	overflow-y: scroll;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+}
+
+*,
+*:before,
+*:after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  color: #151F32;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+nav,
+section {
+	display: block;
+}
+
+ol,
+ul{
+	list-style: none;
+}
+
+table{
+	border-collapse: separate;
+}
+
+caption,
+th,
+td {
+	font-weight: normal;
+	text-align: left;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: "";
+}
+
+blockquote,
+q {
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+	quotes: none;
+}
+
+a:focus {
+	outline: none;
+}
+
+a:hover,
+a:active {
+	outline: none;
+}
+
+a img {
+	border: 0;
+}
+div{
+    display: block;
+}
+img{
+    max-width: 100%;
+    height: auto;
+}
+strong, b, h1, h2, h3, h4, h5, h6{
+  font-weight: bold;
+}
+
+p{
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 18px;
+}
+/* ---------------------------------reset styles-------------------------------------------------------- */
+.transition{
+	transition: all .3s linear;
+	-moz-transition: all .3s linear;
+	-webkit-transition: all .3s linear;
+}
+body{
+	background-image: url(../images/bg.jpg);
+	min-height: 100vh;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.container{
+	min-height: 100vh;
+	background-image: url(../images/logo.png);
+	background-position:bottom right;
+	background-repeat: no-repeat;
+}
+.keys-container{
+	display: flex;
+	justify-content: center;
+	min-height: 100vh;
+	align-items: center;
+	flex-wrap: wrap;
+}
+.key{
+	width: 130px;
+	margin:0 30px;
+	padding: 15px;
+	background-color: #000;
+}
+.key-svg{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100px;
+}
+.key-svg svg{
+	width: 100%;
+}
+.key-svg svg path{
+	fill: #fff;
+}
+.key-text{
+	color: #fff;
+	font-size: 26px;
+	line-height: 30px;
+	text-align: center;
+	margin-top: 15px;
+}
+.key.active{
+	background-color: #fff;
+}
+.key.active .key-text{
+	color: #000;
+}
+.key.active .key-svg svg path{
+	fill: #000;
+}
