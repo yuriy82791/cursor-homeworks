@@ -10,9 +10,7 @@ async function getRandomChinese(length, time){
   let chineseStr = '';
   let i = 0;
   while(i < length){
-    await getChinese(time).then((str) => {
-      chineseStr += str;
-    });
+    chineseStr += await getChinese(time);
     i++;
   }
   return(chineseStr);
