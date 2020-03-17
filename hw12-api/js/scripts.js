@@ -106,7 +106,7 @@ async function getPlanet(page) {
         let planetDiv  = document.createElement('div');
         planetDiv.classList.add('planet');
         planetDiv.innerHTML = `
-          <img src="../images/planet.png" alt="${planet.name}" class="planet-img" />
+          <img src="./images/planet.png" alt="${planet.name}" class="planet-img" />
           <h2 class="planet-name">${planet.name}</h2>
         `;
         container.append(planetDiv);
