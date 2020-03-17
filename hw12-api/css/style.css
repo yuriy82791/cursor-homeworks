@@ -1,0 +1,311 @@
+/* ---------------------------------reset styles-------------------------------------------------------- */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+	border: 0;
+	font-size: 100%;
+	font-style: inherit;
+	font-weight: 400;
+	margin: 0;
+	outline: 0;
+	padding: 0;
+	vertical-align: baseline;
+  font-family: 'Roboto', sans-serif;
+}
+
+html {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	font-size: 62.5%;
+	overflow-y: scroll;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+}
+
+*,
+*:before,
+*:after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body {
+	background: #fff;
+  width: 100%;
+  color: #151F32;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+nav,
+section {
+	display: block;
+}
+
+ol,
+ul{
+	list-style: none;
+}
+
+table{
+	border-collapse: separate;
+}
+
+caption,
+th,
+td {
+	font-weight: normal;
+	text-align: left;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: "";
+}
+
+blockquote,
+q {
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+	quotes: none;
+}
+
+a:focus {
+	outline: none;
+}
+
+a:hover,
+a:active {
+	outline: none;
+}
+
+a img {
+	border: 0;
+}
+div{
+    display: block;
+}
+img{
+    max-width: 100%;
+    height: auto;
+}
+strong, b, h1, h2, h3, h4, h5, h6{
+  font-weight: bold;
+}
+
+p{
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 18px;
+}
+/* ---------------------------------reset styles-------------------------------------------------------- */
+/*----------------------------------loader styles ---------------------------------------------------------*/
+.loader-wrapper {
+  display: inline-block;
+  position: relative;
+  filter: drop-shadow(0 0 1px #fff);
+}
+
+.loader-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  font-family: arial;
+  color: #fff;
+  text-shadow: 1px 1px 1px black;
+  animation: blink 1s ease infinite;
+}
+
+.loader {
+  width: 100px;
+  height: 100px;
+  animation: flip 2s linear infinite;
+}
+
+.loader path {
+  stroke: black;
+  stroke-width: 30;
+  fill: transparent;
+  
+  stroke-dasharray: 100px 5px;
+  animation: spin 1s ease-in-out infinite alternate;
+}
+
+@keyframes spin {
+  0% {
+    stroke-dashoffset: 500;
+    opacity: .5;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes flip {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(1080deg);
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: .5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: .5;
+  }
+}
+.loader-container{
+	position: absolute;	
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	z-index: -1;
+	opacity: 0;
+	top: 0;
+	background-color: rgba(255,255,255, .5);
+}
+.loader-wrapper{
+	margin-top: 30px;
+}
+.loader-container.active{
+	opacity: 1;
+	z-index: 10;
+}
+/*----------------------------------loader styles ---------------------------------------------------------*/
+.btn {
+  background-color: #008CBA;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+input[type=number] {
+  width: 200px;
+  padding: 12px 20px;
+}
+.hide{
+	display: none;
+}
+.site-container{
+	min-height: 100vh;
+	background-image: url(../images/bg.jpg);
+	background-color: #fff;
+	background-position:center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.container{
+	max-width: 1100px;
+	margin: 0 auto;
+}
+.page-title{
+  font-size: 32px;
+  text-align: center;
+	padding-top: 50px;
+	color: #fff;
+}
+.information-container,
+.planet-container{
+	margin: 0 auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+}
+.character{
+	width: 25%;
+}
+.character-item{
+	margin: 15px;
+	background-color: #fff;
+	text-align: center;
+}
+.input-data,
+.pagination,
+.buttons-block{
+	display: flex;
+}
+.buttons-block{
+	justify-content: center;
+	padding: 15px 0;
+}
+.input-data{
+	justify-content: start;
+	padding: 0 15px;
+}
+.planet-section,
+.information-wrapper{
+	position: relative;
+	z-index: 1;
+}
+.image-wrapper img{
+	width: 100%;
+}
+
+.image-wrapper{
+	height: 270px;
+	overflow: hidden;
+}
+.character-item .name{
+	text-align: center;
+	font-size: 24px;
+	padding: 10px 5px;
+}
+.character-item .birth-year{
+	font-size: 16px;
+	padding: 10px 5px;
+}
+.character-item .gender-image{
+	height: 24px;
+	margin-bottom: 10px;
+}
+
+.planet-section{
+	padding: 50px 15px;
+}
+.planet-wrapper-title{
+	font-size: 32px;
+	text-align: center;
+	color: #fff;
+}
+.planet{
+	width: 20%;
+	padding: 15px;
+}
+.planet-name{
+	font-size: 24px;
+	color: #fff;
+	text-align: center;
+}
+.pagination{
+	justify-content: center;
+}
+.pagination #next,
+.pagination #prev{
+	margin: 5px;
+}
