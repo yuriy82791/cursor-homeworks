@@ -6,23 +6,23 @@ const genderIcon = {
   'hermaphrodite': 'hermaphrodite.png'
 };
 const imageObj = {
-  'https://swapi.co/api/people/1/': '../images/luke.png',
-  'https://swapi.co/api/people/2/': '../images/C-3PO.png',
-  'https://swapi.co/api/people/3/': '../images/R2-D2.png',
-  'https://swapi.co/api/people/4/': '../images/Darth-Vader.png',
-  'https://swapi.co/api/people/5/': '../images/Leia-Organa.jpg',
-  'https://swapi.co/api/people/10/': '../images/Obi-Wan-Kenobi.jpg',
-  'https://swapi.co/api/people/13/': '../images/Chewbacca.png',
-  'https://swapi.co/api/people/14/': '../images/Han-Solo.jpg',
-  'https://swapi.co/api/people/16/': '../images/Jabba.jpg',
-  'https://swapi.co/api/people/18/': '../images/Wedge-Antilles.jpg',
-  'https://swapi.co/api/people/20/': '../images/Yoda.png',
-  'https://swapi.co/api/people/21/': '../images/Palpatine.png',
-  'https://swapi.co/api/people/22/': '../images/Boba-Fett.png',
-  'https://swapi.co/api/people/23/': '../images/IG-88.jpg',
-  'https://swapi.co/api/people/24/': '../images/Bossk.png',
-  'https://swapi.co/api/people/25/': '../images/Lando-Calrissian.jpg',
-  'https://swapi.co/api/people/26/': '../images/Lobot.jpg'
+  'https://swapi.co/api/people/1/': './images/luke.png',
+  'https://swapi.co/api/people/2/': './images/C-3PO.png',
+  'https://swapi.co/api/people/3/': './images/R2-D2.png',
+  'https://swapi.co/api/people/4/': './images/Darth-Vader.png',
+  'https://swapi.co/api/people/5/': './images/Leia-Organa.jpg',
+  'https://swapi.co/api/people/10/': './images/Obi-Wan-Kenobi.jpg',
+  'https://swapi.co/api/people/13/': './images/Chewbacca.png',
+  'https://swapi.co/api/people/14/': './images/Han-Solo.jpg',
+  'https://swapi.co/api/people/16/': './images/Jabba.jpg',
+  'https://swapi.co/api/people/18/': './images/Wedge-Antilles.jpg',
+  'https://swapi.co/api/people/20/': './images/Yoda.png',
+  'https://swapi.co/api/people/21/': './images/Palpatine.png',
+  'https://swapi.co/api/people/22/': './images/Boba-Fett.png',
+  'https://swapi.co/api/people/23/': './images/IG-88.jpg',
+  'https://swapi.co/api/people/24/': './images/Bossk.png',
+  'https://swapi.co/api/people/25/': './images/Lando-Calrissian.jpg',
+  'https://swapi.co/api/people/26/': './images/Lobot.jpg'
 }
 const src = window.location.href;
 const config = {
@@ -33,14 +33,14 @@ const config = {
 const API_URL = 'https://cors-anywhere.herokuapp.com/https://swapi.co/api/';
 function getImage(url){
   if(imageObj[url] == undefined){
-    return '../images/StarWarsLogo.png';
+    return './images/StarWarsLogo.png';
   }else{
     return imageObj[url];
   }
 }
 function getGenderIcon(gender){
   if(genderIcon[gender] == undefined){
-    return '../images/n-a.png';
+    return './images/n-a.png';
   }else{
     return genderIcon[gender];
   }
