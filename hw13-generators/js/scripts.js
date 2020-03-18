@@ -17,6 +17,8 @@ console.log(idGenerator.next().value);
 console.log(idGenerator.next().value);
 console.log(idGenerator.next().value);
 console.log(idGenerator.next().value);
+console.log('-------------------------------------Advanced--------------------------------------');
+
 //-------------------------------------Advanced--------------------------------------
 function *newFontGenerator(size){
    let fontSize = size;
